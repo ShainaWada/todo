@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
 import { MdDeleteForever } from "react-icons/md";
+import { CiCircleRemove } from "react-icons/ci";
 
-const TodoList = ({ taskList, handleDelete, handleCompleted }) => {
+const TodoList = ({
+  taskList,
+  handleDelete,
+  handleCompleted,
+  handleDeleteAll,
+}) => {
   return (
     <>
       {taskList.map((task) => (
@@ -10,15 +16,21 @@ const TodoList = ({ taskList, handleDelete, handleCompleted }) => {
             className="checkbox"
             type="checkbox"
             checked={task.isDone}
-            onClick={() => handleCompleted(task.id)}
+            onChange={() => handleCompleted(task.id)}
           />
           <label>{task.title}</label>
-          <MdDeleteForever
+          <CiCircleRemove
             className="delete"
             onClick={() => handleDelete(task.id)}
           />
         </li>
       ))}
+      {taskList.length >= 1 && (
+        <button className="delete-all" onClick={handleDeleteAll}>
+          Delete All
+          <MdDeleteForever />
+        </button>
+      )}
     </>
   );
 };

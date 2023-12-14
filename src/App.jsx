@@ -44,6 +44,10 @@ function App() {
     );
   };
 
+  const handleDeleteAll = () => {
+    setTaskList([]);
+  };
+
   return (
     <>
       <div className="todo">
@@ -59,6 +63,7 @@ function App() {
           taskList={taskList}
           handleDelete={handleDelete}
           handleCompleted={handleCompleted}
+          handleDeleteAll={handleDeleteAll}
         />
       </div>
     </>

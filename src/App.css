@@ -1,6 +1,7 @@
 body {
   width: 100vw;
   height: 100vh;
+  font-family: monospace;
   display: flex;
   justify-content: center;
   background-image: url(../public/cool-background.png);
@@ -70,11 +71,14 @@ body {
 }
 
 .todo > h1 {
+  font-size: 4rem;
   color: #ffffff;
 }
 
 .task {
+  font-weight: bold;
   display: flex;
+  align-items: center;
   padding: 0.25rem 0.5rem;
   background-color: #ffffff;
   border-radius: 2px;
@@ -84,4 +88,12 @@ body {
 .delete {
   font-size: 1.5rem;
   margin-left: auto;
+}
+
+.delete-all {
+  font-size: 1rem;
+  color: rgb(216, 62, 62);
+  display: flex;
+  margin: 1rem auto;
+  align-items: center;
 }
