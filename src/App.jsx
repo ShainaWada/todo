@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
+import Filter from "./components/Filter";
 
 function App() {
   const [inputTodo, setInputTodo] = useState("");
@@ -42,14 +43,14 @@ function App() {
   return (
     <>
       <div className="todo">
-        <h1>ToDo List</h1>
+        <h1>ToDo App</h1>
         <AddTodo
           inputTodo={inputTodo}
           setInputTodo={setInputTodo}
           handleSubmit={handleSubmit}
         />
         <hr />
-        <div>Filter</div>
+        <Filter />
         <TodoList
           taskList={taskList}
           handleDelete={handleDelete}
