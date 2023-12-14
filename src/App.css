@@ -23,7 +23,7 @@ body {
 }
 
 .todo-filter > input {
-  accent-color: deeppink;
+  accent-color: #f652a9;
 }
 
 .completed {
@@ -49,7 +49,7 @@ body {
 }
 
 .checkbox {
-  accent-color: deeppink;
+  accent-color: #f652a9;
 }
 
 .input:focus {
@@ -92,11 +92,12 @@ body {
 .delete {
   font-size: 1.5rem;
   margin-left: auto;
+  color: #d83e3e;
 }
 
 .delete-all {
   font-size: 0.75rem;
-  color: rgb(216, 62, 62);
+  color: #d83e3e;
   display: flex;
   margin: 1rem auto;
   align-items: center;
