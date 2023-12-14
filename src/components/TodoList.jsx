@@ -28,7 +28,7 @@ const TodoList = ({
       {taskList.length >= 1 && (
         <button className="delete-all" onClick={handleDeleteAll}>
           Delete All
-          <MdDeleteForever />
+          <MdDeleteForever size={16} />
         </button>
       )}
     </>

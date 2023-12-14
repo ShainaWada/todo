@@ -85,15 +85,23 @@ body {
   margin-bottom: 0.25rem;
 }
 
+.task label {
+  margin-left: 0.5rem;
+}
+
 .delete {
   font-size: 1.5rem;
   margin-left: auto;
 }
 
 .delete-all {
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: rgb(216, 62, 62);
   display: flex;
   margin: 1rem auto;
   align-items: center;
+}
+
+.todo-filter > label {
+  font-size: 1rem;
 }
