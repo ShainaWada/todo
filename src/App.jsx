@@ -7,6 +7,7 @@ import Filter from "./components/Filter";
 function App() {
   const [inputTodo, setInputTodo] = useState("");
   const [taskList, setTaskList] = useState([]);
+  const [filter, setFilter] = useState("all");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +49,10 @@ function App() {
     setTaskList([]);
   };
 
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
   return (
     <>
       <div className="todo">
@@ -58,9 +63,10 @@ function App() {
           handleSubmit={handleSubmit}
         />
         <hr />
-        <Filter />
+        <Filter onFilterChange={handleFilterChange} />
         <TodoList
           taskList={taskList}
+          filter={filter}
           handleDelete={handleDelete}
           handleCompleted={handleCompleted}
           handleDeleteAll={handleDeleteAll}

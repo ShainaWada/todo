@@ -7,10 +7,18 @@ const TodoList = ({
   handleDelete,
   handleCompleted,
   handleDeleteAll,
+  filter,
 }) => {
+  const filteredTasks = taskList.filter((task) => {
+    if (filter === "all") return true;
+    if (filter === "todo") return !task.isDone;
+    if (filter === "done") return task.isDone;
+    return true;
+  });
+
   return (
     <>
-      {taskList.map((task) => (
+      {filteredTasks.map((task) => (
         <li className={`task ${task.isDone ? "completed" : ""}`} key={task.id}>
           <input
             className="checkbox"
