@@ -3,6 +3,7 @@ import "./App.css";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import Filter from "./components/Filter";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [inputTodo, setInputTodo] = useState("");
@@ -28,7 +29,7 @@ function App() {
     setTaskList([
       ...taskList,
       {
-        id: taskList.length,
+        id: uuidv4(),
         title: inputTodo,
         isDone: false,
       },
