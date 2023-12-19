@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
@@ -8,6 +8,15 @@ function App() {
   const [inputTodo, setInputTodo] = useState("");
   const [taskList, setTaskList] = useState([]);
   const [filter, setFilter] = useState("all");
+
+  useEffect(() => {
+    const storedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    setTaskList(storedTasks);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(taskList));
+  }, [taskList]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
